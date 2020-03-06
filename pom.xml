@@ -18,6 +18,7 @@
         <module>cloud-provider-payment8004</module>
         <module>cloud-consumerzk-order80</module>
         <module>cloud-consumerconsul-order80</module>
+        <module>cloud-consumer-feign-order80</module>
     </modules>
     <packaging>pom</packaging>
     <description>父工程,统一管理jar包版本</description>
