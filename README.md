@@ -1,5 +1,9 @@
 # 尚硅谷2020最新版SpringCloud(H版&alibaba)框架开发教程全套完整版从入门到精通(大牛讲授spring cloud)
 
+## 0. 视频地址
+
+[视频教程](https://www.bilibili.com/video/av93813318)
+
 ## 1. 笔记
 doc目录
 
@@ -29,4 +33,9 @@ mysql的用户名和密码
 127.0.0.1 eureka7001.com
 127.0.0.1 eureka7002.com
 ```
+### 2.3 修改zookeeper的地址
+
+cloud-provider-payment8004\src\main\resources\application.yml
+
+spring.cloud.zookeeper.connect-string=localhost:2181
 
