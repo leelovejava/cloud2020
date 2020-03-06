@@ -1,0 +1,28 @@
+server:
+  port: 7001
+spring:
+  application:
+    name: cloud-eureka-service
+eureka:
+  instance:
+    # eureka服务端的实例名称
+    # 单机 hostname: localhost
+    hostname: eureka7001.com
+    # Eureka客户端向服务端发送心跳的时间间隔,单位为秒(默认是30秒)
+    lease-renewal-interval-in-seconds: 1
+    # Eureka服务端在收到最后一次心跳后等待时间上限 ,单位为秒(默认是90秒),超时剔除服务
+    lease-expiration-duration-in-seconds: 2
+  server:
+    # 禁用自我保护,保证不可用服务被及时删除
+    enable-self-preservation: true
+    eviction-interval-timer-in-ms: 2000
+  client:
+    # false表示不向注册中心注册自己
+    register-with-eureka: false
+    # false表示自己端就是注册中心,我的职责就是维护服务实例,并不需要检索服务
+    fetch-registry: false
+    service-url:
+      # 设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址
+      # 单机 defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      # 相互注册
+      defaultZone: http://eureka7002.com:7002/eureka/
