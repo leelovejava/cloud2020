@@ -13,6 +13,7 @@ import reactor.core.publisher.Mono;
 import java.util.Date;
 
 /**
+ * 全局自定义过滤器
  *
  * @author zzyy
  * @version 1.0
@@ -24,20 +25,26 @@ public class MyLogGatewayFilter implements GlobalFilter, Ordered {
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("come in global filter {}", new Date());
+        log.info("come in global filter: {}", new Date());
 
         ServerHttpRequest request = exchange.getRequest();
         String uname = request.getQueryParams().getFirst("uname");
-        if(uname == null){
+        if (uname == null) {
             log.info("用户名为null，非法用户");
             exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
             return exchange.getResponse().setComplete();
         }
+        // 放行
         return chain.filter(exchange);
     }
 
+    /**
+     * 过滤器加载的顺序 越小,优先级别越高
+     *
+     * @return
+     */
     @Override
     public int getOrder() {
-        return 1;
+        return 0;
     }
 }
