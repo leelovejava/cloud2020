@@ -157,3 +157,6 @@ hs_err_pid*
 ### SVN template
 .svn/
 
+# mmap
+*.~$lock
+
