@@ -9,7 +9,7 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:zhanyifan1997/springcloud-config.git
+          uri: git@github.com:leelovejava/springcloud-config.git
           search-paths:
             - spring-config
       label: master

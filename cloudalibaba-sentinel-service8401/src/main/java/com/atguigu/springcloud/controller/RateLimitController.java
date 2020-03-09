@@ -3,7 +3,7 @@ package com.atguigu.springcloud.controller;
 import cn.hutool.core.util.IdUtil;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
-import com.atguigu.springcloud.myHandler.CustomerBlockHandler;
+import com.atguigu.springcloud.myhandler.CustomerBlockHandler;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import org.springframework.web.bind.annotation.GetMapping;

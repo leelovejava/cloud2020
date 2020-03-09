@@ -6,6 +6,7 @@ spring:
   cloud:
     nacos:
       discovery:
+        # Nacos服务注册中心地址
         server-addr: localhost:8848
     sentinel:
       transport:
@@ -13,6 +14,15 @@ spring:
         dashboard: localhost:8080
         # 默认为8719，如果被占用会自动+1，直到找到为止
         port: 8719
+      # 流控规则持久化到nacos
+      datasource:
+        dsl:
+          nacos:
+            server-addr: localhost:8848
+            data-id: ${spring.application.name}
+            group-id: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 management:
   endpoints:
     web:
