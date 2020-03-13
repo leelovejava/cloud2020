@@ -10,12 +10,13 @@ import javax.annotation.Resource;
 import java.util.UUID;
 
 /**
+ * EnableBinding 定义消息的推送管道
  *
  * @author zzyy
  * @version 1.0
  * @create 2020/03/06
  */
-@EnableBinding(Source.class) //定义消息的推送管道
+@EnableBinding(Source.class)
 public class MessageProviderImpl implements IMessageProvider {
 
     /**
