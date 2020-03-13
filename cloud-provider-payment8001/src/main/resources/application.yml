@@ -11,6 +11,13 @@ spring:
     url: jdbc:mysql://localhost:3306/db2019?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: root
+  # zipkin/sleuth链路跟踪
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样值介于0到1之间,1表示全部采集
+      probability: 1
 eureka:
   client:
     register-with-eureka: true

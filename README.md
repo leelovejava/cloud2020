@@ -51,4 +51,4 @@ spring.cloud.zookeeper.connect-string=localhost:2181
 * JMeter
 * RabbitMq
 * [Seata-server](https://github.com/seata/seata/releases/download/v0.9.0/seata-server-0.9.0.zip)
-
+* zipkin-server
