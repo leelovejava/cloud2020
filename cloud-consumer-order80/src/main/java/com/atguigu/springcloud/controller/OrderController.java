@@ -80,7 +80,8 @@ public class OrderController {
 
     /**
      * 路由规则: 轮询
-     *  http://localhost/consumer/payment/payment/lb
+     * http://localhost/consumer/payment/payment/lb
+     *
      * @return
      */
     @GetMapping(value = "/consumer/payment/lb")
@@ -92,6 +93,17 @@ public class OrderController {
         ServiceInstance serviceInstance = loadBalancer.instances(instances);
         URI uri = serviceInstance.getUri();
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
+    }
+
+    /**
+     * 链路跟踪 zipkin+sleuth
+     * http://localhost/consumer/payment/zipkin
+     *
+     * @return
+     */
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin() {
+        return restTemplate.getForObject("http://localhost:8081/payment/zipkin/", String.class);
     }
 
 }

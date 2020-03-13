@@ -64,7 +64,7 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         log.info("*****查询结果: " + payment);
         if (payment != null) {
-            return new CommonResult(200, "查询成功,serverPort:"+serverPort, payment);
+            return new CommonResult(200, "查询成功,serverPort:" + serverPort, payment);
         }
         return new CommonResult(444, "没有对应记录,查询ID:" + id, null);
     }
@@ -104,5 +104,15 @@ public class PaymentController {
             e.printStackTrace();
         }
         return serverPort;
+    }
+
+    /**
+     * 链路跟踪
+     *
+     * @return
+     */
+    @GetMapping(value = "/payment/zipkin")
+    public String paymentZipkin() {
+        return "hi,i'am paymentZipkin server fall back,welcome to atguigu,O(∩_∩)O哈哈~";
     }
 }
