@@ -15,7 +15,7 @@
     <!--减库存-->
     <update id="decrease">
         update t_storage
-        set used =used + #{count},residue=#{count}
+        set used =used + #{count},residue=residue-#{count}
         where product_id=#{productId};
     </update>
 </mapper>
