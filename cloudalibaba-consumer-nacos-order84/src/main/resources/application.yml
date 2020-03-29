@@ -13,7 +13,7 @@ spring:
         port: 8719
 
 service-url:
-  nacos-user-service: http://naocs-payment-provider
+  nacos-user-service: http://nacos-payment-provider
 
 #激活sentinel对feign的支持
 feign:
