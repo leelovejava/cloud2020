@@ -99,7 +99,7 @@ create table `lock_table` (
 create database seata_order;
 USE seata_order;
 CREATE TABLE `t_order`  (
-  `int` bigint(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `user_id` bigint(20) DEFAULT NULL COMMENT '用户id',
   `product_id` bigint(11) DEFAULT NULL COMMENT '产品id',
   `count` int(11) DEFAULT NULL COMMENT '数量',
@@ -126,7 +126,7 @@ create database seata_storage;
 USE seata_storage;
 DROP TABLE IF EXISTS `t_storage`;
 CREATE TABLE `t_storage`  (
-  `int` bigint(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(11) NOT NULL AUTO_INCREMENT,
   `product_id` bigint(11) DEFAULT NULL COMMENT '产品id',
   `total` int(11) DEFAULT NULL COMMENT '总库存',
   `used` int(11) DEFAULT NULL COMMENT '已用库存',
